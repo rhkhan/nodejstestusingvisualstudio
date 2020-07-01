@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{data}
+  table.table.table-striped(style='width:700px')(align='center')
+    thead
+      tr
+        th First Name
+        th Last Name
+        th Designation
+    tbody
+      each value in data
+        tr
+          td=value.FirstName
+          td=value.LastName
+          td=value.Designation

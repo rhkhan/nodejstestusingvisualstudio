@@ -7,7 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
@@ -63,3 +63,12 @@ app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function () {
     debug('Express server listening on port ' + server.address().port);
 });
+
+//var data = require('./public/javascripts/productdata.js');
+
+//app.use(express.bodyParser());
+
+//app.get('/products', data.getProducts);
+//app.post('/products', data.addProduct);
+//app.delete('/products/:id', data.deleteProduct);
+//app.put('/products/:id', data.updateProduct);
