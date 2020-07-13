@@ -30,7 +30,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="connect.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\javascripts\productdata.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="routes\courses\list.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="routes\index.js" />
@@ -48,6 +54,7 @@
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
+    <Folder Include="routes\courses\" />
     <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
