@@ -1,30 +1,19 @@
 extends layout
 
-block content
-  table.table.table-striped(style='width:700px')(align='center')
-    thead
-      tr
-        th First Name
-        th Last Name
-        th Designation
-    tbody
-      each value in data
-        tr
-          td=value.FirstName
-          td=value.LastName
-          td=value.Designation
-
-  h1= title
-  p Welcome to #{title}
-  script.
-    var f1 = function() { document.getElementById('myImage').src='#{imgdata.item1}' }
-  script.
-    var f2 = function() { document.getElementById('myImage').src='#{imgdata.item2}' }
-  script.
-    var f3 = function() { document.getElementById('myImage').src='#{imgdata.item3}' }
-
-  button(onclick='f1()') One!
-  button(onclick='f2()') Two!
-  button(onclick='f3()') Three!
-  p
-  a: img(id='myImage' height='200' width='200' src='')
+block layout-content
+  h1=title
+      p Welcome to #{title}
+      form(action="/", method="POST")
+          input(name="lead_email" type="email", placeholder="Enter your email address")
+          button(type="submit") Submit
+      if leads
+        h1 Leads
+        for lead in leads
+          p(id=lead.id) 
+            span #{lead.email}
+            | 
+            a(href="/lead/"+lead.id) Details
+            | 
+            button(onclick=`deleteLead('${lead.id}')`) Delete 
+            script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+            script(src='/javascripts/leads.js')

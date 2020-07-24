@@ -29,13 +29,25 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".sequelizerc" />
     <Content Include="app.js" />
     <Content Include="connect.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="migrations\202007201835-CreateLeadTable.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="models\index.js" />
+    <Content Include="models\Lead.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\favicon.ico" />
+    <Content Include="public\images\food.jpg" />
+    <Content Include="public\javascripts\leads.js" />
     <Content Include="public\javascripts\productdata.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="public\stylesheets\style.css" />
     <Content Include="routes\courses\list.js">
       <SubType>Code</SubType>
     </Content>
@@ -47,15 +59,24 @@
     <Content Include="views\index.pug" />
     <Content Include="views\layout.pug" />
     <Content Include="views\error.pug" />
+    <Content Include="views\lead.pug" />
+    <Content Include="views\lead\edit_lead.pug" />
+    <Content Include="views\user.pug">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="migrations\" />
+    <Folder Include="models\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="routes\courses\" />
+    <Folder Include="seeders\" />
     <Folder Include="views\" />
+    <Folder Include="views\lead\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "sa",
+    "password": "Rubel@root",
+    "database": "TestDB",
+    "host": "127.0.0.1",
+    "dialect": "mssql",
+    "port": 1433
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "database": "database_production",
+    "dialect": "mysql",
+    "host": "127.0.0.1",
+    "password": null,
+    "username": "root"
+  }
+}
+
